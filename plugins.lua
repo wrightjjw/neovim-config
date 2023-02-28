@@ -18,10 +18,6 @@ local plugins = require('packer').startup(function(use)
     }
 
     use { 'L3MON4D3/LuaSnip',
-        setup = function()
-            require("luasnip.loaders.from_vscode").lazy_load()
-            require("luasnip.loaders.from_snipmate").lazy_load()
-        end
     }
     use 'saadparwaiz1/cmp_luasnip'
     use 'hrsh7th/cmp-nvim-lsp'
@@ -148,6 +144,8 @@ if not vim.g.vscode then
     }
 end
 
+require("luasnip.loaders.from_vscode").lazy_load()
+require("luasnip.loaders.from_snipmate").lazy_load()
 
 -- neogit config
 require'neogit'.setup{}
