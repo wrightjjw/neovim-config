@@ -17,7 +17,12 @@ local plugins = require('packer').startup(function(use)
         },
     }
 
-    use 'L3MON4D3/LuaSnip'
+    use { 'L3MON4D3/LuaSnip',
+        setup = function()
+            require("luasnip.loaders.from_vscode").lazy_load()
+            require("luasnip.loaders.from_snipmate").lazy_load()
+        end
+    }
     use 'saadparwaiz1/cmp_luasnip'
     use 'hrsh7th/cmp-nvim-lsp'
     use 'hrsh7th/cmp-path'
@@ -28,6 +33,7 @@ local plugins = require('packer').startup(function(use)
         requires = 'nvim-lua/plenary.nvim'
     }
     use { 'tpope/vim-fugitive' } -- better for commits
+    use { 'airblade/vim-gitgutter' } -- gutter
 
     -- lf file manager integration
     use {
@@ -80,6 +86,7 @@ local plugins = require('packer').startup(function(use)
 
     -- snippets
     use 'rafamadriz/friendly-snippets'
+    use 'honza/vim-snippets'
 
     -- status line
     use 'feline-nvim/feline.nvim'
@@ -141,7 +148,6 @@ if not vim.g.vscode then
     }
 end
 
-require("luasnip.loaders.from_vscode").lazy_load()
 
 -- neogit config
 require'neogit'.setup{}
@@ -149,6 +155,8 @@ require'neogit'.setup{}
 -- wiki config
 vim.g.wiki_filetypes = { "md" }
 vim.g.wiki_link_extension = ".md"
+
+neogit = require('neogit')
 
 
 
