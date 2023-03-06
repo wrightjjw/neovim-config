@@ -24,6 +24,9 @@ local plugins = require('packer').startup(function(use)
     use 'hrsh7th/cmp-path'
     use 'hrsh7th/cmp-buffer'
 
+    -- debugging
+    use 'mfussenegger/nvim-dap'
+
     -- git integration
     use { 'TimUntersberger/neogit',
         requires = 'nvim-lua/plenary.nvim'

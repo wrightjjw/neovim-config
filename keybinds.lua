@@ -34,17 +34,17 @@ if not vim.g.vscode then
         end,
     })
 
-    -- Leader
-    --wk.register({
-    --    l = {
-    --        name = "LSP",
-    --        h = { vim.lsp.buf.hover, "Hover" },
-    --        f = { vim.lsp.buf.format, "Format" },
-    --        r = { vim.lsp.buf.references, "Find references" },
-    --        i = { vim.lsp.buf.implementation, "Find implementations" },
-    --        a = { vim.lsp.buf.code_action, "Code Actions" },
-    --    }
-    --}, { prefix = "<leader>" })
+    -- dap
+    -- TODO: Only set keys when DAP is available
+--    local dap = require"dap"
+--    wk.register({
+--        ["<F5>"] = { dap.continue(), "Debug Launch/Continue" },
+--        ["<F9>"] = { dap.toggle_breakpoint(), "Toggle Breakpoint" },
+--        ["S-<F9>"] = { dap.clear_breakpoints(), "Clear All Breakpoints" },
+--        ["<F10>"] = { dap.step_over(), "Debug Step Over" },
+--        ["<F11>"] = { dap.set_into(), "Debug Step Into" },
+--        ["S-<F11>"] = { dap.set_out(), "Debug Step Out" },
+--    }, {})
 
 end
 

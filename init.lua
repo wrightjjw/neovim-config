@@ -38,6 +38,15 @@ vim.cmd.colorscheme('onedark')
 
 vim.keymap.set('n', '<leader>bl', ':ls<cr>:b ')
 
+
+-- spell in markdown
+vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter"}, {
+    pattern = {"*.md"},
+    callback = function ()
+        vim.opt.spell = true
+    end
+})
+
 -- initialize Mason
 require('mason').setup()
 
