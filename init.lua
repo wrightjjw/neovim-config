@@ -1,6 +1,3 @@
--- add config dir to load path
-package.path = vim.fn['stdpath']('config') .. package.path
-
 -- neovide
 require('neovide')
 
