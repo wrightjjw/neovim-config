@@ -36,8 +36,6 @@ vim.opt.termguicolors = true
 --end
 vim.cmd.colorscheme('onedark')
 
-vim.keymap.set('n', '<leader>bl', ':ls<cr>:b ')
-
 
 -- spell in markdown
 vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter"}, {

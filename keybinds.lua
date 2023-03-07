@@ -52,7 +52,14 @@ end
 wk.register({
     ["<c-h>"] = { "<cmd>noh<cr>", "Clear search highlight" },
 
+
     ["<leader>"] = {
         g = { "<cmd>Neogit<cr>", "Neogit" },
+        b = {
+            name = "Buffer Operations",
+            b = { "<cmd>ls<cr><cmd>b ", "Change Buffer" },
+            d = { "<cmd>bdelete<cr>", "Delete Buffer" },
+            D = { "<cmd>bdelete!<cr>", "Delete Buffer!" },
+        }
     }
 })
