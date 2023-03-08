@@ -57,7 +57,7 @@ wk.register({
         g = { "<cmd>Neogit<cr>", "Neogit" },
         b = {
             name = "Buffer Operations",
-            b = { "<cmd>ls<cr><cmd>b ", "Change Buffer" },
+            b = { ":ls<cr>:b ", "Change Buffer" },
             d = { "<cmd>bdelete<cr>", "Delete Buffer" },
             D = { "<cmd>bdelete!<cr>", "Delete Buffer!" },
         }

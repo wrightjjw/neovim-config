@@ -1,8 +1,8 @@
--- neovide
-require('neovide')
-
 -- plugins file
 require('plugins')
+
+-- neovide
+require('neovide')
 
 -- lsp file
 require('lsp')
