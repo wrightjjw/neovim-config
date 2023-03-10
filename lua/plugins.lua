@@ -4,7 +4,15 @@ local plugins = require('packer').startup(function(use)
 
     -- color schemes
     use 'sickill/vim-monokai'
-    use 'navarasu/onedark.nvim'
+    use { 'navarasu/onedark.nvim',
+        config = require'onedark'.setup{
+            colors = {
+                grey = '#7c828c'
+            }
+        }
+    }
+
+    use 'ellisonleao/gruvbox.nvim'
 
     -- completion
     use { 'hrsh7th/nvim-cmp',
