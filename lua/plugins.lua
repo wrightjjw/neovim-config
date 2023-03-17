@@ -4,7 +4,13 @@ local plugins = require('packer').startup(function(use)
 
     -- color schemes
     use 'sickill/vim-monokai'
-    use 'navarasu/onedark.nvim'
+    use { 'navarasu/onedark.nvim',
+        require('onedark').setup {
+            colors = {
+                grey = '#7c828c',
+            },
+        }
+    }
 
     -- completion
     use { 'hrsh7th/nvim-cmp',
@@ -29,15 +35,15 @@ local plugins = require('packer').startup(function(use)
 
     -- git integration
     use { 'TimUntersberger/neogit',
-        requires = 'nvim-lua/plenary.nvim'
+        --use { 'Strongleong/neogit',
+        --branch = 'fix_469'
+        config = [[require'neogit'.setup{}]]
     }
     use { 'tpope/vim-fugitive' } -- better for commits
     use { 'airblade/vim-gitgutter' } -- gutter
 
-    -- lf file manager integration
-    use {
-        'ptzz/lf.vim',
-        requires = 'voldikss/vim-floaterm'
+    use { 'sindrets/diffview.nvim',  -- diffing and merging
+        requires = 'nvim-lua/plenary.nvim',
     }
 
     -- lsp config
@@ -56,9 +62,9 @@ local plugins = require('packer').startup(function(use)
         "nvim-neo-tree/neo-tree.nvim",
         branch = "v2.x",
         requires = {
-          "nvim-lua/plenary.nvim",
-          "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
-          "MunifTanjim/nui.nvim",
+            "nvim-lua/plenary.nvim",
+            "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+            "MunifTanjim/nui.nvim",
         },
         config = function()
             -- remove legacy neotree commands (recommended)
@@ -75,11 +81,11 @@ local plugins = require('packer').startup(function(use)
     }
 
     -- org mode
-    use {'nvim-orgmode/orgmode',
+    use { 'nvim-orgmode/orgmode',
         requires = "nvim-treesitter/nvim-treesitter",
         config = function()
             require('orgmode').setup_ts_grammar()
-            require('orgmode').setup{}
+            require('orgmode').setup {}
         end
     }
 
@@ -89,6 +95,11 @@ local plugins = require('packer').startup(function(use)
 
     -- status line
     use 'feline-nvim/feline.nvim'
+
+    -- telescope
+    use { 'nvim-telescope/telescope.nvim',
+        branch = '0.1.x',
+    }
 
     -- treesitter
     use { 'nvim-treesitter/nvim-treesitter',
@@ -112,12 +123,10 @@ local plugins = require('packer').startup(function(use)
 
     -- wiki.vim
     use 'lervag/wiki.vim'
-
 end)
 
 -- cmp config
 if not vim.g.vscode then
-
     local cmp = require 'cmp'
     cmp.setup {
         --snippet engine (REQUIRED)
@@ -150,16 +159,9 @@ end
 require("luasnip.loaders.from_vscode").lazy_load()
 require("luasnip.loaders.from_snipmate").lazy_load()
 
--- neogit config
-require'neogit'.setup{}
-
 -- wiki config
 vim.g.wiki_filetypes = { "md" }
 vim.g.wiki_link_extension = ".md"
 
-neogit = require('neogit')
-
-
 
 return plugins
-
