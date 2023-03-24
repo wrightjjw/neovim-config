@@ -23,6 +23,9 @@ vim.opt.shiftwidth = 4
 vim.opt.softtabstop = 4
 vim.opt.expandtab = true
 
+-- prefer horizontal splits for diffview (vertical monitor)
+vim.opt.diffopt:append('horizontal')
+
 -- set leader to space
 vim.g.mapleader = ' '
 

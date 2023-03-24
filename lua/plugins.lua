@@ -44,6 +44,20 @@ local plugins = require('packer').startup(function(use)
 
     use { 'sindrets/diffview.nvim',  -- diffing and merging
         requires = 'nvim-lua/plenary.nvim',
+        config = require("diffview").setup({
+            view = {
+                default = {
+                    layout = "diff2_vertical",
+                },
+                merge_tool = {
+                    layout = "diff3_vertical",
+                }
+            }
+        })
+    }
+
+    use { 'akinsho/git-conflict.nvim',
+        config = [[require('git-conflict').setup()]]
     }
 
     -- lsp config
