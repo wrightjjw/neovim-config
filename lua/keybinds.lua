@@ -14,6 +14,7 @@ if not vim.g.vscode then
                     r = { vim.lsp.buf.references, "Find references", buffer = args.buf },
                     i = { vim.lsp.buf.implementation, "Find implementations", buffer = args.buf },
                     a = { vim.lsp.buf.code_action, "Code Actions", buffer = args.buf },
+                    R = { vim.lsp.buf.rename, "Rename", buffer = args.buf },
                     d = {
                         name = "Diagnostics",
                         n = { vim.diagnostic.goto_next, "Go to next diagnostic", buffer = args.buf },

@@ -60,4 +60,7 @@ if not vim.g.vscode then
         -- true
         analyze_open_documents_only = false,
     }
+
+    -- typescript
+    require'lspconfig'.tsserver.setup{}
 end
