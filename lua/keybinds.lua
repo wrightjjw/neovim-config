@@ -31,6 +31,10 @@ if not vim.g.vscode then
                 },
                 ["<leader>d"] = { vim.diagnostic.open_float, "Open diagnostic popup", buffer = args.buf },
             }, {})
+
+            --TODO: Move these to a TS autocmd?
+            vim.opt.foldmethod = "expr"
+            vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
         end,
     })
 
@@ -49,6 +53,8 @@ if not vim.g.vscode then
 end
 
 -- GLOBAL keybinds
+
+local tsb = require('telescope.builtin')
 wk.register({
     ["<c-h>"] = { "<cmd>noh<cr>", "Clear search highlight" },
 
@@ -60,6 +66,12 @@ wk.register({
             b = { ":ls<cr>:b ", "Change Buffer" },
             d = { "<cmd>bdelete<cr>", "Delete Buffer" },
             D = { "<cmd>bdelete!<cr>", "Delete Buffer!" },
-        }
+        },
+        f = {
+            f = { tsb.find_files, "Find Files" },
+            g = { tsb.live_grep, "Live Grep" },
+            b = { tsb.buffers, "Find Buffer" },
+            h = { tsb.help_tags, "Find Help Tag" },
+        },
     }
 })

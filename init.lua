@@ -10,6 +10,9 @@ require('lsp')
 -- keybinds
 require('keybinds')
 
+-- custom
+require('custom')
+
 -- line numbers
 vim.opt.number = true
 vim.opt.relativenumber = true
@@ -22,6 +25,12 @@ vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.softtabstop = 4
 vim.opt.expandtab = true
+
+-- conceal
+vim.opt.conceallevel = 2
+
+-- prefer horizontal splits for diffview (vertical monitor)
+vim.opt.diffopt:append('horizontal')
 
 -- set leader to space
 vim.g.mapleader = ' '
