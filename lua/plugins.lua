@@ -8,11 +8,11 @@ local plugins = require('packer').startup(function(use)
     -- color schemes
     use 'sickill/vim-monokai'
     use { 'navarasu/onedark.nvim',
-        require('onedark').setup {
+        config = [[require('onedark').setup {
             colors = {
                 grey = '#7c828c',
             },
-        }
+        }]]
     }
 
     -- completion
@@ -47,7 +47,7 @@ local plugins = require('packer').startup(function(use)
 
     use { 'sindrets/diffview.nvim',  -- diffing and merging
         requires = 'nvim-lua/plenary.nvim',
-        config = require("diffview").setup({
+        config = [[require("diffview").setup({
             view = {
                 default = {
                     layout = "diff2_vertical",
@@ -56,7 +56,7 @@ local plugins = require('packer').startup(function(use)
                     layout = "diff3_vertical",
                 }
             }
-        })
+        })]]
     }
 
     use { 'akinsho/git-conflict.nvim',
@@ -71,7 +71,7 @@ local plugins = require('packer').startup(function(use)
 
     -- mason external package manager
     use { 'williamboman/mason.nvim',
-        config = require('mason').setup()
+        config = [[require('mason').setup()]]
     }
 
     -- neotree
