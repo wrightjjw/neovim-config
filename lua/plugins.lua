@@ -15,6 +15,20 @@ local plugins = require('packer').startup(function(use)
         }]]
     }
 
+    -- closetag.vim
+    use { 'alvan/vim-closetag',
+        config = { function()
+            vim.g.closetag_filetypes = 'html,js,typescriptreact'
+            vim.g.closetag_emptyTags_caseSensitive = 1
+            vim.g.closetag_regions = {
+                ['typescript.tsx'] = 'jsxRegion,tsxRegion',
+                ['javascript.jsx'] = 'jsxRegion',
+                --['typescriptreact'] = 'jsxRegion,tsxRegion',
+                --['javascriptreact'] = 'jsxRegion',
+            }
+        end},
+    }
+
     -- completion
     use { 'hrsh7th/nvim-cmp',
         require = {
@@ -116,6 +130,11 @@ local plugins = require('packer').startup(function(use)
     -- telescope
     use { 'nvim-telescope/telescope.nvim',
         branch = '0.1.x',
+        config = [[require'telescope'.setup{
+            defaults = {
+                path_display={"truncate"}
+            }
+        }]],
     }
 
     -- treesitter
