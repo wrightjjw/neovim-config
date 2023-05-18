@@ -25,8 +25,8 @@ I *do* regularly use Neovide.
 - More!
 
 ## Todo List
-[ ] Enable "snippet skipping": using tab to go to next part of snippet
-[ ] Find keybind that allows `<cr>` without inputting a cmp suggestion.
+- [ ] Enable "snippet skipping": using tab to go to next part of snippet
+- [ ] Find keybind that allows `<cr>` without inputting a cmp suggestion.
 
 ## Windows
 Supported on Windows as much as possible.
