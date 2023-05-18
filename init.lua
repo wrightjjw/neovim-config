@@ -10,9 +10,6 @@ require('lsp')
 -- keybinds
 require('keybinds')
 
--- custom
-require('custom')
-
 -- line numbers
 vim.opt.number = true
 vim.opt.relativenumber = true
