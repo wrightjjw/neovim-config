@@ -25,8 +25,10 @@ I *do* regularly use Neovide.
 - More!
 
 ## Todo List
-- [ ] Enable "snippet skipping": using tab to go to next part of snippet
+- [x] Enable "snippet skipping": using tab to go to next part of snippet
 - [ ] Find keybind that allows `<cr>` without inputting a cmp suggestion.
+- [ ] Disable tag completion in not html jsx
+- [ ] DAP Mode, especially for NodeJS
 
 ## Windows
 Supported on Windows as much as possible.
