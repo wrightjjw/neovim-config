@@ -112,6 +112,23 @@ local plugins = require('packer').startup(function(use)
     -- debugging
     use 'mfussenegger/nvim-dap'
 
+    use { 'rcarriga/nvim-dap-ui',
+        requries = 'mfussenegger/nvim-dap',
+        config = function()
+            local dap, dapui = require'dap', require'dapui'
+            dapui.setup()
+            dap.listeners.after.event_initialized["dapui_config"] = function()
+                dapui.open()
+            end
+            dap.listeners.before.event_terminated["dapui_config"] = function()
+                dapui.close()
+            end
+            dap.listeners.after.event_exited["dapui_config"] = function()
+                dapui.close()
+            end
+        end
+    }
+
     -- git integration
     use { 'TimUntersberger/neogit',
         --use { 'Strongleong/neogit',

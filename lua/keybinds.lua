@@ -1,4 +1,5 @@
 local wk = require("which-key")
+local dapui = require("dapui")
 
 -- Keybinds for NO VSCODE
 if not vim.g.vscode then
@@ -21,6 +22,11 @@ if not vim.g.vscode then
                         p = { vim.diagnostic.goto_prev, "Go to previous diagnostic", buffer = args.buf },
                         o = { vim.diagnostic.open_float, "Open diagnostic popup", buffer = args.buf },
                     }
+                },
+
+                d = {
+                    name = "DAP",
+                    e = { dapui.eval(), "Evaluate current expression" }
                 }
             }, { prefix = "<leader>" })
 
