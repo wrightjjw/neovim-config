@@ -23,8 +23,8 @@ local plugins = require('packer').startup(function(use)
             vim.g.closetag_regions = {
                 ['typescript.tsx'] = 'jsxRegion,tsxRegion',
                 ['javascript.jsx'] = 'jsxRegion',
-                --['typescriptreact'] = 'jsxRegion,tsxRegion',
-                --['javascriptreact'] = 'jsxRegion',
+                ['typescriptreact'] = 'jsxRegion,tsxRegion',
+                ['javascriptreact'] = 'jsxRegion',
             }
         end},
     }
