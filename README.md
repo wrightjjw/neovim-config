@@ -11,6 +11,9 @@ On Windows (PowerShell):
 ```
 git clone https://github.com/wrightjjw/neovim-config ~/AppData/Local/nvim
 ```
+Follow the quickstart instructions for
+[Packer](https://github.com/wbthomason/packer.nvim#quickstart), then run
+`:PackerSync` to set up plugins.
 
 ## Features
 - Configuration is mindful of
