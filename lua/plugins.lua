@@ -116,7 +116,16 @@ local plugins = require('packer').startup(function(use)
     use { 'TimUntersberger/neogit',
         --use { 'Strongleong/neogit',
         --branch = 'fix_469'
-        config = [[require'neogit'.setup{}]]
+        requires = {
+            'nvim-lua/plenary.nvim',
+            'sindrets/diffview.nvim',
+        },
+
+        config = [[require'neogit'.setup{
+            integrations = {
+                diffview = true,
+            },
+        }]]
     }
     use { 'tpope/vim-fugitive' } -- better for commits
     use { 'airblade/vim-gitgutter' } -- gutter
@@ -139,9 +148,6 @@ local plugins = require('packer').startup(function(use)
         config = [[require('git-conflict').setup()]]
     }
 
-    -- lsp config
-    use 'neovim/nvim-lspconfig'
-
     -- markdown
     use 'preservim/vim-markdown'
 
@@ -149,6 +155,10 @@ local plugins = require('packer').startup(function(use)
     use { 'williamboman/mason.nvim',
         config = [[require('mason').setup()]]
     }
+
+    -- lsp config (after mason for compatibility)
+    use 'neovim/nvim-lspconfig'
+
 
     -- neotree
     use {
