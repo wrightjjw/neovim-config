@@ -183,6 +183,19 @@ local plugins = require('packer').startup(function(use)
         end
     }
 
+    use { 'nvim-neorg/neorg',
+        after = 'nvim-treesitter',
+        config = function ()
+            require('neorg').setup{
+                load = {
+                    ["core.defaults"] = {},
+                    ["core.concealer"] = {},
+                    ["core.dirman"] = {},
+                },
+            }
+        end
+    }
+
     -- org mode
     use { 'nvim-orgmode/orgmode',
         requires = "nvim-treesitter/nvim-treesitter",
