@@ -155,9 +155,6 @@ local plugins = require('packer').startup(function(use)
         }]]
     }
 
-    -- lsp config
-    use 'neovim/nvim-lspconfig'
-
     -- markdown
     use 'preservim/vim-markdown'
 
@@ -221,6 +218,9 @@ local plugins = require('packer').startup(function(use)
 
     -- status line
     use 'feline-nvim/feline.nvim'
+
+    -- table formatting
+    use 'dhruvasagar/vim-table-mode'
 
     -- telescope
     use { 'nvim-telescope/telescope.nvim',
