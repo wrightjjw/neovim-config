@@ -148,6 +148,16 @@ local plugins = require('packer').startup(function(use)
         config = [[require('git-conflict').setup()]]
     }
 
+    -- image viewing
+    use { 'edluffy/hologram.nvim',
+        config = [[require('hologram').setup{
+            auto_display = true, -- wip markdown display, apparently
+        }]]
+    }
+
+    -- lsp config
+    use 'neovim/nvim-lspconfig'
+
     -- markdown
     use 'preservim/vim-markdown'
 
