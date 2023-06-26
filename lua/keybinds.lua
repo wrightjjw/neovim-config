@@ -74,5 +74,7 @@ wk.register({
             b = { tsb.buffers, "Find Buffer" },
             h = { tsb.help_tags, "Find Help Tag" },
         },
-    }
+    },
 })
+
+vim.keymap.set('t', '<Esc>', '<C-\\><C-n>')
