@@ -1,5 +1,8 @@
 -- only use lsp if we are not in vscode
 if not vim.g.vscode then
+    -- gopls
+    require'lspconfig'.gopls.setup{}
+
     -- lua-ls
     require'lspconfig'.lua_ls.setup {
         Lua = {
