@@ -148,6 +148,16 @@ local plugins = require('packer').startup(function(use)
         config = [[require('git-conflict').setup()]]
     }
 
+    -- go
+    use { 'ray-x/go.nvim',
+        requires = {
+            'nvim-treesitter/nvim-treesitter',
+            'neovim/nvim-lspconfig',
+        },
+
+        config = [[require('go').setup()]]
+    }
+
     -- image viewing
     use { 'edluffy/hologram.nvim',
         config = [[require('hologram').setup{
