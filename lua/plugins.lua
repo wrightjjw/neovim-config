@@ -150,6 +150,7 @@ local plugins = require('packer').startup(function(use)
 
     -- go
     use { 'ray-x/go.nvim',
+        branch = 'nvim_0.8',
         requires = {
             'nvim-treesitter/nvim-treesitter',
             'neovim/nvim-lspconfig',
@@ -246,7 +247,9 @@ local plugins = require('packer').startup(function(use)
     use { 'nvim-treesitter/nvim-treesitter',
         run = function()
             vim.cmd("TSUpdate")
-        end
+        end,
+
+        config = [[require('nvim-treesitter.configs').setup{}]]
     }
 
     -- web devicons
