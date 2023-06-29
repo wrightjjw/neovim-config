@@ -37,7 +37,7 @@ vim.opt.termguicolors = true
 --if not vim.g.neovide then
 --    vim.cmd.autocmd('ColorScheme * highlight Normal ctermbg=NONE guibg=NONE')
 --end
-vim.cmd.colorscheme('onedark')
+vim.cmd.colorscheme('aurora')
 
 
 -- spell in markdown

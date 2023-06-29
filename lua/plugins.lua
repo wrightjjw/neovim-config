@@ -15,6 +15,11 @@ local plugins = require('packer').startup(function(use)
         }]]
     }
 
+    use 'ChristianChiarulli/nvcode-color-schemes.vim'
+    use 'bluz71/vim-nightfly-colors'
+    use 'bluz71/vim-moonfly-colors'
+    use 'marko-cerovac/material.nvim'
+
     -- closetag.vim
     use { 'alvan/vim-closetag',
         config = { function()
