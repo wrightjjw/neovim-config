@@ -180,7 +180,9 @@ local plugins = require('packer').startup(function(use)
     }
 
     -- lsp config (after mason for compatibility)
-    use 'neovim/nvim-lspconfig'
+    use { 'neovim/nvim-lspconfig',
+        --after = 'mason.nvim'
+    }
 
 
     -- neotree
@@ -206,6 +208,7 @@ local plugins = require('packer').startup(function(use)
         end
     }
 
+    -- neorg
     use { 'nvim-neorg/neorg',
         after = 'nvim-treesitter',
         config = function ()
