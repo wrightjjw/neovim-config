@@ -118,7 +118,7 @@ local plugins = require('packer').startup(function(use)
     use 'mfussenegger/nvim-dap'
 
     -- git integration
-    use { 'TimUntersberger/neogit',
+    use { 'NeogitOrg/neogit',
         --use { 'Strongleong/neogit',
         --branch = 'fix_469'
         requires = {
@@ -165,11 +165,13 @@ local plugins = require('packer').startup(function(use)
     }
 
     -- image viewing
-    use { 'edluffy/hologram.nvim',
-        config = [[require('hologram').setup{
-            auto_display = true, -- wip markdown display, apparently
-        }]]
-    }
+    if not vim.fn.has('win32') then
+        use { 'edluffy/hologram.nvim',
+            config = [[require('hologram').setup{
+                auto_display = true, -- wip markdown display, apparently
+            }]]
+        }
+    end
 
     -- markdown
     use 'preservim/vim-markdown'
