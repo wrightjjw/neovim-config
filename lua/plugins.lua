@@ -259,7 +259,17 @@ local plugins = require('packer').startup(function(use)
             vim.cmd("TSUpdate")
         end,
 
-        config = [[require('nvim-treesitter.configs').setup{}]]
+        config = [[
+            require('nvim-treesitter.configs').setup{
+                highlight = {
+                    enable = true,
+                },
+
+                indent = {
+                    enable = true,
+                }
+            }
+        ]],
     }
 
     -- web devicons
