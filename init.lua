@@ -38,6 +38,12 @@ vim.opt.termguicolors = true
 --    vim.cmd.autocmd('ColorScheme * highlight Normal ctermbg=NONE guibg=NONE')
 --end
 vim.cmd.colorscheme('aurora')
+vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' })
+vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'none' })
+
+-- move lines
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
 
 -- spell in markdown
