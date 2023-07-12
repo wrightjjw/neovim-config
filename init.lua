@@ -37,7 +37,9 @@ vim.opt.termguicolors = true
 --if not vim.g.neovide then
 --    vim.cmd.autocmd('ColorScheme * highlight Normal ctermbg=NONE guibg=NONE')
 --end
-vim.cmd.colorscheme('aurora')
+vim.g.moonflyTransparent = true
+vim.g.moonflyItalic = true
+vim.cmd.colorscheme('moonfly')
 vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' })
 vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'none' })
 
