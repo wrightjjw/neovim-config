@@ -221,7 +221,9 @@ local plugins = require('packer').startup(function(use)
                     ["core.dirman"] = {},
                 },
             }
-        end
+        end,
+        run = ":Neorg sync-parsers",
+        requires = "nvim-lua/plenary.nvim",
     }
 
     -- org mode
